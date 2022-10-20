@@ -41,12 +41,11 @@ S. Paul, P. Ghassemi and S. Chowdhury, "Learning Scalable Policies over Graphs f
     
     Bibtex: 
            @article{behjat2022adaptive,
-  title={Adaptive Neuroevolution With Genetic Operator Control and Two-Way Complexity Variation},
-  author={Behjat, Amir and Maurer, Nathan and Chidambaran, Sharat and Chowdhury, Souma},
-  journal={IEEE Transactions on Artificial Intelligence},
-  year={2022},
-  publisher={IEEE}
-}
+           title={Adaptive Neuroevolution With Genetic Operator Control and Two-Way Complexity Variation},
+           author={Behjat, Amir and Maurer, Nathan and Chidambaran, Sharat and Chowdhury, Souma},
+           journal={IEEE Transactions on Artificial Intelligence},
+           year={2022},
+           publisher={IEEE}}
 
 
 If you have any questions or concerns, please raise an issue or email: namaurer@buffalo.edu
