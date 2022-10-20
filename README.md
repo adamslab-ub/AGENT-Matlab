@@ -36,7 +36,7 @@ Dependencies:
 Citation:
 
     Please cite our work if you find it useful.
-S. Paul, P. Ghassemi and S. Chowdhury, "Learning Scalable Policies over Graphs for Multi-Robot Task Allocation using Capsule Attention Networks," 2022 International Conference on Robotics and Automation (ICRA), 2022, pp. 8815-8822, doi: 10.1109/ICRA46639.2022.9812370.
+Behjat, Amir, et al. "Adaptive Neuroevolution With Genetic Operator Control and Two-Way Complexity Variation." IEEE Transactions on Artificial Intelligence (2022).
 
     
     Bibtex: 
