@@ -1,7 +1,5 @@
 # AGENT-Matlab
 
-To run the test mountain car code run AGENT_main.m
-
 Adaptive Genomic Evolution of Neural-Network Topologies (AGENT)
 
 This repository contains the code for the implementation of Adaptive Genomic Evolution Neural-Network Topologies aka AGENT, for evolutionary reinforcment learning. 
