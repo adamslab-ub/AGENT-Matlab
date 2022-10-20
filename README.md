@@ -2,7 +2,7 @@
 
 Adaptive Genomic Evolution of Neural-Network Topologies (AGENT)
 
-This new algorithm, called the Adaptive Genomic Evolution of Neural Network Topologies (AGENT), builds on the neuroevolution of augmenting topologies (NEAT) concept. Novel mechanisms for adapting the selection and mutation operations are implemented to favorably control population diversity and exploration/exploitation balance.
+This new algorithm, called the Adaptive Genomic Evolution of Neural Network Topologies (AGENT), builds on the neuroevolution of augmenting topologies (NEAT) concept. Neuroevolution is an approach to use a special kind of genetic algorithm to design or train artificial neural networks, with the NEAT concept being particularly capable of optimizing both the structure and parameters (e.g., weights) on the neural network. It can be perceived as simultaneous neural architecture search and training. In Agent, novel mechanisms for adapting the selection and mutation operations are implemented to favorably control population diversity and exploration/exploitation balance. 
 Further advancements to the NEAT paradigm occur through the incorporation of variable neuronal properties and new mutation operations that uniquely allow both the growth and pruning of ANN topologies during evolution. 
 
 This repository contains the code for the implementation of Adaptive Genomic Evolution Neural-Network Topologies aka AGENT, for evolutionary reinforcment learning. 
