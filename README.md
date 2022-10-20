@@ -6,13 +6,6 @@ Adaptive Genomic Evolution of Neural-Network Topologies (AGENT)
 
 This repository contains the code for the implementation of Adaptive Genomic Evolution Neural-Network Topologies aka AGENT, for evolutionary reinforcment learning. 
 
-Environment:
-    The SR-ST MRTA environment can be initialized using the MRTA class inside problem/mrta/problem_mrta.py. All the state space variables and the necessary functions
-    to update the state space are implemented using the StateMRTA class inside problem/mrta/state_mrta.py
-The training.py implements a REINFORCE algorithm
-
-![](gif_latest.gif)
-
 How to use the code:
 
     Learning:
@@ -30,12 +23,12 @@ How to use the code:
     Evaluation:
         The sample code uses Countinous Montain Car from OpenAI Gym, but the code can be modified for other problems from Python (like the example code) or Mtalab              environments. When a new problem is used, the range of inputs and outputs should be set in init_user_specified_variables.m.
 
-Dependencies:
-    The code is written in Matlab. We recommend using Matlab R2019b or newer since we tested in these versions but previous versions of Matlab might be acceptable too. 
+    Dependencies:
+        The code is written in Matlab. We recommend using Matlab R2019b or newer since we tested in these versions but previous versions of Matlab might be acceptable          too. 
 
-Citation:
+    Citation:
 
-    Please cite our work if you find it useful.
+        Please cite our work if you find it useful.
 Behjat, Amir, et al. "Adaptive Neuroevolution With Genetic Operator Control and Two-Way Complexity Variation." IEEE Transactions on Artificial Intelligence (2022).
 
     
