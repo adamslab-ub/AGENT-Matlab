@@ -1,5 +1,5 @@
 function init_user_specified_variables(sample_id)
-% This is the function user shoulfd modify.
+% This is the function user should modify.
 
 global min_run_step max_run_step stalled_iteration tolerance_f Total_AGENT_CPU_time;
 global num_genomes num_input num_output;
@@ -9,7 +9,7 @@ global use_parallel_evaluations;
 global simul_para;
 
 % These parameters must be chosen by user , You should not add any more
-% parameter, just change the values
+% parameters, just change the values
 %% AGENT parameters
 % if you use func_test you need to provife simulation parameters otherwise
 % you can define a function like func_test yourself
@@ -34,8 +34,8 @@ else
 end
 
 % Stopping Criteria
-max_run_step = 100;% 500 FOR HIGH % 50 NOW
-min_run_step = 100;% AGENT will not stop in 10 iterations unless CPU time  % 200 FOR HIGH % 300 FOR NOW
+max_run_step = 100;
+min_run_step = 100;% AGENT will not stop in 10 iterations unless CPU time
 
 min_run_step = min(min_run_step,max_run_step);
 stalled_iteration = 10;
@@ -76,8 +76,8 @@ switch openAI_run
         min_inp=[0       ,-100*pi,-1,-1,-pi*ones(1,4),0,-100*pi*ones(1,4),0,   zeros(1,10)];
         max_inp=[2*pi/180,+100*pi,+1,+1,+pi*ones(1,4),1,+100*pi*ones(1,4),1,250*ones(1,10)];
         
-        min_output= [-1*ones(1,4)]; % output actions range % originaly it was one output but it must be wrong
-        max_output= [+1*ones(1,4)]; % output actions range % originaly it was one output but it must be wrong
+        min_output= [-1*ones(1,4)]; % output actions range
+        max_output= [+1*ones(1,4)]; % output actions range
     case 'NO OPEN AI'
         min_inp=[-1.2, -0.07]; % input states range
         max_inp=[ 0.6, 0.07]; % input states range
@@ -94,8 +94,6 @@ num_output = length(max_output);
 
 use_parallel_evaluations = 1;
 
-% num_genomes = max(50,(num_input+num_output)*10);
-% num_genomes = min(500,num_genomes);
 
 user_para.func_name_to_run = func_name_to_run;
 user_para.max_run_step = max_run_step;
@@ -109,8 +107,8 @@ user_para.use_parallel_evaluations =use_parallel_evaluations;
 save(['user_para' num2str(sample_id) '.mat'],'user_para');
 
 %% Simulation parameters
-% These parameters should be defined by user, Uou can add more parametrs
-% but don't remove any parameter
+% These parameters should be defined by user. You can add more parameters
+% but don't remove any parameters.
 
 N_inp = length(min_inp);
 
@@ -122,14 +120,14 @@ elseif strcmp(simul_para.initial_choice,'Mean')
     simul_para.initial_state = (max_inp-min_inp)/2;
     simul_para.initial_state(end) = []; % Remove bias
 elseif strcmp(simul_para.initial_choice,'Specific')
-    simul_para.initial_state = [-0.6,0];    % user should specify it 
+    simul_para.initial_state = [-0.6,0];
 end
 if strcmp(simul_para.initial_choice,'Random')
     % simul_para.initial_state Will be specified later 
 end
 
 %%% These are some examples for termination, You can use them or any other
-% parametr you prefer
+% parameter you prefer
 simul_para.max_CPU_time = Inf;% seconds (tic-toc)
 simul_para.max_simulation_time = 1000;% seconds (virtual time)
 simul_para.max_iteration = 1000;% Number of evaluations

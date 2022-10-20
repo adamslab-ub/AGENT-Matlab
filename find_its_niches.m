@@ -13,9 +13,6 @@ for i_n=1:num_niches
         end
     end
 end
-% 'ZZZZZZZZZZZZZZZZZ'
-% best_niches
-% 'ZZZZZZZZZZZZZZZZZ'
 genome_x.niche_of_genome=best_niches;
 niches(best_niches).size_niches=niches(best_niches).size_niches+1;
 

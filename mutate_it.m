@@ -1,10 +1,5 @@
 function geneome_x=mutate_it(geneome_x)
 
-% geneome_x.matrix_weights
-% rand
-% '666666666666666666666'
-% geneome_x.matrix_weights
-
 global r_mute_w r_unif unif_perc r_mute_enable min_w max_w global_node_num global_geneom_num
 global global_inn_num r_mute_add_edge r_mute_add_node r_mute_remove_node
 global num_input num_output;
@@ -19,26 +14,16 @@ global list_to_FUNC;
 what_genome_was = geneome_x;
 
 for i_edge=geneome_x.n_edge:-1:1
-    
-    %mute W
     r1=rand;
-%     r1
     if r1<r_mute_w
-%         '%yyyy1'
-%         rand
-%         'X1'
         r=i_edge;
         
         r_u=rand;
-%         r_u
         if r_u<r_unif
             
             signer=2*randi(2)-3;
             rand;
             geneome_x.edge_gene(r).weight=geneome_x.edge_gene(r).weight+rand*(signer*unif_perc*(max_w-min_w));
-%             rrx = sqrt(2) * erfinv(2 * rand - 1);
-            % geneome_x.edge_gene(r).weight=geneome_x.edge_gene(r).weight+rrx*unif_perc*(max_w-min_w);
-%             geneome_x.edge_gene(r).weight=geneome_x.edge_gene(r).weight+rrx*unif_perc*(max_w-min_w);
             if geneome_x.edge_gene(r).weight>max_w
                 geneome_x.edge_gene(r).weight=max_w;
             end
@@ -59,16 +44,11 @@ for i_edge=geneome_x.n_edge:-1:1
         geneome_x.matrix_weights(st,en)=geneome_x.edge_gene(r).weight;
     end
     
-    %creat node
+    %create node
     if geneome_x.n_node<=max_node_for_one_genome
         
         r1=rand;
         if r1<r_mute_add_node
-            %'yyyy2'
-%             geneome_x.matrix_weights
-
-%             rand
-%             'X2'
             r=i_edge;
             
             geneome_x.n_edge=geneome_x.n_edge+1;
@@ -144,9 +124,6 @@ for i_edge=geneome_x.n_edge:-1:1
         %mute enable
         r1X=rand;
         if r1X<r_mute_enable
-%             'X3'
-           % 'yyyy3'
-%             rand
             r=i_edge;
             
             for i=1:geneome_x.n_node
@@ -186,7 +163,6 @@ for i_edge=geneome_x.n_edge:-1:1
     
 end
 
-% geneome_x.matrix_weights
 %create edge
 if geneome_x.n_edge<=max_edge_for_one_genome% added for speed
     for i_nodes1=1:geneome_x.n_node
@@ -194,13 +170,6 @@ if geneome_x.n_edge<=max_edge_for_one_genome% added for speed
             
             r1x=rand;
             if r1x<r_mute_add_edge
-%             if r1x<-1
-%                 'X4'
-                 %'yyyy4'
-%                  geneome_x.matrix_weights
-
-%                  geneome_x.matrix_weights
-%                 rand
                 found_something=0;
                 
                 r1=i_nodes1;
@@ -231,29 +200,18 @@ if geneome_x.n_edge<=max_edge_for_one_genome% added for speed
                     geneome_x=relayer(geneome_x);
 
                 end
-%                 found_something
-%                 geneome_x.matrix_weights
-%                 '%yyyy4DONE'
-                 
             end
         end
     end
 end
-% geneome_x.matrix_weights
 % on nodes
 for i_nodes=geneome_x.n_node:-1:1
     r1x=rand;
     if r1x<r_mute_change_node_change_type
-%         'X5'
-%          '%yyyy5'
-%             rand
         geneome_x.list_node(i_nodes).list_node_type=randi(N_nodetypes);
     end
     r1=rand;
     if r1<r_mute_change_node_change_time
-%         'X6'
-%          '%yyyy6'
-%             rand
         geneome_x.list_node(i_nodes).list_node_type=randi(N_nodetypes);
         r2=rand;
         if r2<0.5
@@ -274,12 +232,7 @@ for i_nodes=geneome_x.n_node:-1:1
     end
     r1x=rand;
     if r1x<r_mute_remove_node
-%         'X7'
         if i_nodes>num_input+num_output
-             %'yyyy7'
-%              geneome_x.matrix_weights
-    
-%             rand
             i_edge=geneome_x.n_edge;
             list_st=[];
             list_en=[];
@@ -300,8 +253,6 @@ for i_nodes=geneome_x.n_node:-1:1
                     end
                     geneome_x.edge_gene(geneome_x.n_edge) =[];
                     geneome_x.n_edge=geneome_x.n_edge-1;
-                    
-                    %                 else
                     
                 end
                 i_edge=i_edge-1;
@@ -329,19 +280,12 @@ for i_nodes=geneome_x.n_node:-1:1
             
             list_st=union(list_st,[]);
             list_en=union(list_en,[]);
-%             list_st
-%             list_en
-%             'BBBBBBBBBBBBBBBBBBBBBBBBBBB'
-%             list_st
-%             list_en
-%             'BBBBBBBBBBBBBBBBBBBBBBBBBBB'
-            
+
             % add for the removed nodes
             for i_n1=1:length(list_st)
                 for i_n2=1:length(list_en)
                     if geneome_x.matrix_weights(list_st(i_n1),list_en(i_n2))==0 || geneome_x.enable_weights(list_st(i_n1),list_en(i_n2))==0
                         geneome_x.matrix_weights(list_st(i_n1),list_en(i_n2))=min_w+rand*(max_w-min_w);
-                        %(geneome_x.matrix_weights(list_st(i_n1),list_en(i_n2)))
                         geneome_x.enable_weights(list_st(i_n1),list_en(i_n2))=1;
                         
                         geneome_x.n_edge=geneome_x.n_edge+1;
@@ -357,15 +301,12 @@ for i_nodes=geneome_x.n_node:-1:1
                     end
                 end
             end
-%             for i_node_x=i_nodes:length(geneome_x.list_node):geneome_x.n_node-1
-            for i_node_x=i_nodes:geneome_x.n_node-1 % Changed because it was strange
+            for i_node_x=i_nodes:geneome_x.n_node-1
 
                 geneome_x.list_node(i_node_x)=geneome_x.list_node(i_node_x+1);
             end
             
-            % geneome_x.list_node(i_nodes)=[];% it was like this but I
-            % think it is wrong, the last one should be removed
-            geneome_x.list_node(geneome_x.n_node)=[];% the updated one
+            geneome_x.list_node(geneome_x.n_node)=[];
             
             geneome_x.matrix_weights(:,i_nodes)=[];
             geneome_x.matrix_weights(i_nodes,:)=[];
@@ -380,11 +321,8 @@ for i_nodes=geneome_x.n_node:-1:1
     end
 end
 
-% geneome_x.matrix_weights
 
 if check_loop_imidietly(geneome_x)
-% if 0
-    
     geneome_x = what_genome_was;
     geneome_x.fit_fun(1)=MIN_OBJ;
     geneome_x.rank = RANK_0;
@@ -400,16 +338,9 @@ else
     N_fathers=N_fathers+1;
     geneome_x.fathers=[geneome_x.fathers;N_fathers,1];
     
-%     apply_simulate=1;
-    
     list_to_FUNC=[list_to_FUNC; geneome_x];
     
-%     apply_simulate=0;
-    
 end
-
-% geneome_x.matrix_weights
-% '77777777777777777777777'    
 
 end
 

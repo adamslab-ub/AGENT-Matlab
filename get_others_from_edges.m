@@ -2,8 +2,6 @@ function [is_possible_based_on_node_size,genome_x]=get_others_from_edges(genome_
 
 global num_input num_output global_geneom_num global_node_num max_node_for_one_genome;
 
-%c_t = tic; 
-
 genome_x.n_edge=n_edge_x;
 global_geneom_num=global_geneom_num+1;
 
@@ -82,7 +80,6 @@ end
 
 matrix_weights_x=zeros(n_node_x,n_node_x);
 enable_weights_x=zeros(n_node_x,n_node_x);
-%if n_node_x>max_node_for_one_genome: % this was the answer but it seems so wrong
 if n_node_x<=max_node_for_one_genome
     
     is_possible_based_on_node_size = 1 ; % check if the total genome does not pass total node limit

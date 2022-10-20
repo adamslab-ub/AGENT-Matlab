@@ -19,7 +19,6 @@ for i_n1=1:num_niches
                 else
                     sh_dis(flag1,flag2)=0;
                 end
-                 % sh_dis(flag1,flag2)
             end
         end
     end

@@ -54,12 +54,8 @@ all_W=[];
 all_N=[];
 
 for i_genomes=1:num_genomes_start
-    %i_genomes
     for i_node=1:num_input+num_output
         def_genome_struct.list_node(i_node).list_node_type=randi(N_nodetypes);
-        % rr_x = rand
-        % def_genome_struct.list_node(i_node).list_node_type=ceil(rr_x*N_nodetypes);
-%         def_genome_struct.list_node(i_node).list_node_type
         r=rand;
         if r<0.5
             def_genome_struct.list_node(i_node).list_node_time=randi(max_hist_node+1)-1;
@@ -128,7 +124,6 @@ for i_genomes=1:num_genomes_start
     end
     
     genome_to_save(i_genomes)=genome(i_genomes);
-    %genome_to_save(i_genomes).list_layers
 end
 list_to_FUNC=[];
 

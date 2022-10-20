@@ -19,19 +19,14 @@ if (needed_population_of_niche>=+1)
     flag=1;
     while(needed_population_of_niche>created)
         created=created+1;
-%         niches_x.list_num_genomes(1).matrix_weights
         mutated=mutate_it(niches_x.list_num_genomes(flag));
         niches_x.size_niches=niches_x.size_niches+1;
         niches_x.list_num_genomes=[niches_x.list_num_genomes  mutated];
-%         niches_x.list_num_genomes(1).matrix_weights
-        
         flag=flag+1;
         if (flag>niches_x.size_niches)
             flag=1;
         end
     end
-    
-%     niches_x.size_niches=niches_x.size_niches+needed_population_of_niche;
 end
 
 end

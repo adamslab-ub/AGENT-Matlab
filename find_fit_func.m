@@ -67,7 +67,6 @@ total_counter_Amir = total_counter_Amir + sum(counter_Amir);
 total_totalStepCounter = total_totalStepCounter + sum(totalStepCounter);
 
 for i=1:N_G
-    % genome_list(i).fit_fun
     if genome_list(i).fit_fun > F_best_till_now
         F_best_till_now = genome_list(i).fit_fun;
     end
@@ -77,15 +76,6 @@ for i=1:N_G
      niches(list(i,1)).list_num_genomes(list(i,2))=genome_list(i);
      ff(i)=genome_list(i).fit_fun(1);
 end
-% ffs = sort(ff);
-% ffs
-% ff
-
-% 'xxxxxxxxxx'
 mean_ff=mean(ff);
-% sum(ff)
-% mean_ff
-
-% F_best_till_now
 
 end

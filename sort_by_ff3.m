@@ -1,12 +1,5 @@
 function niches_x=sort_by_ff3(niches_x)
 global RANK_0;
-% for i_g=1:niches_x.size_niches
-%     'XXXXXXXXXXXXXXXXXXXXXXX'
-%     niches_x.list_num_genomes(i_g).rank
-%     niches_x.list_num_genomes(i_g).fit_fun(1)
-%     niches_x.list_num_genomes(i_g).matrix_weights
-% end
-
 
 if niches_x.size_niches>0
     
@@ -50,7 +43,7 @@ if niches_x.size_niches>0
             if niches_x.list_num_genomes(i_s).n_node==niche_conser.list_num_genomes(i_g).n_node
                 c1=niches_x.list_num_genomes(i_s).matrix_weights.*niches_x.list_num_genomes(i_s).enable_weights;
                 c2=niche_conser.list_num_genomes(i_g).matrix_weights.*niche_conser.list_num_genomes(i_g).enable_weights;
-                if (size(c1,1)==size(c2,1)) && (mark_conser(i_g)==0) % to be sure they are atleast the same size, probably ok without it but it was bad in python
+                if (size(c1,1)==size(c2,1)) && (mark_conser(i_g)==0) % to be sure they are at least the same size
                     if  (min(min(c1==c2))==1) && (niches_x.list_num_genomes(i_s).rank==RANK_0)
                         not_found=0;
                         mark_conser(i_g) = 1;
@@ -72,7 +65,7 @@ if niches_x.size_niches>0
             if niches_x.list_num_genomes(i_s).n_node==niche_ranker.list_num_genomes(i_g).n_node                
                 c1=niches_x.list_num_genomes(i_s).matrix_weights.*niches_x.list_num_genomes(i_s).enable_weights;
                 c2=niche_ranker.list_num_genomes(i_g).matrix_weights.*niche_ranker.list_num_genomes(i_g).enable_weights;
-                if (size(c1,1)==size(c2,1))  && (mark_ranker(i_g)==0)% to be sure they are atleast the same size, probably ok without it but it was bad in python
+                if (size(c1,1)==size(c2,1))  && (mark_ranker(i_g)==0)% to be sure they are at least the same size
                     if  (min(min(c1==c2))==1) && (niches_x.list_num_genomes(i_s).rank==RANK_0)                              
                         not_found=0;
                         mark_ranker(i_g) = 1 ;                       
@@ -103,14 +96,6 @@ for i_g1=1:niches_x.size_niches-1
         end
     end
 end
-
-% for i_g=1:niches_x.size_niches
-%     'XXXXXXXXXXXXXXXXXXXXXXX'
-%     niches_x.list_num_genomes(i_g).rank
-%     niches_x.list_num_genomes(i_g).fit_fun(1)
-%     niches_x.list_num_genomes(i_g).matrix_weights
-% end
-
 
 end
 

@@ -18,7 +18,6 @@ for i_n=1:num_niches
         for kk=1:length(list_to_FUNC)
             WE2=list_to_FUNC(kk).matrix_weights.*list_to_FUNC(kk).enable_weights;
             if size(WE1,1)==size(WE2,1)
-%                 if isequal(WE1,WE2)
                 if (min(min(WE1==WE2))==1) && (niches(i_n).list_num_genomes(i_g).fit_fun(1)==MIN_OBJ)
                     flag=flag+1;
                     list_r(flag,:)=[i_n,i_g];
@@ -29,7 +28,7 @@ for i_n=1:num_niches
             end
             
         end
-        if FOUND_IT==0 && niches(i_n).list_num_genomes(i_g).fit_fun(1)==MIN_OBJ%-1000.106 # probably harmless because it must befound but anyway it was strange
+        if FOUND_IT==0 && niches(i_n).list_num_genomes(i_g).fit_fun(1)==MIN_OBJ
             
             N_length_list_to_FUNC=length(list_to_FUNC)+1;
             list_to_FUNC(N_length_list_to_FUNC)=niches(i_n).list_num_genomes(i_g);
@@ -39,14 +38,6 @@ for i_n=1:num_niches
         end
     end
 end
-
-% for lll =1 : size(list,1)
-%     niches(list_r(lll,1)).list_num_genomes(list_r(lll,2)).matrix_weights
-%     niches(list_r(lll,1)).list_num_genomes(list_r(lll,2)).fit_fun
-% end
-% 'xxxxxxxxxxxxxxxxxxxxxx'
-% list
-% sd
 N_G=flag;
 
 input_for_FUNC.func_name_to_run=func_name_to_run;
@@ -82,7 +73,6 @@ genomeNumberList = 1:1:N_G; %?
 
 counter_Amir = zeros(N_G,1);
 totalStepCounter = zeros(N_G,1);
-% input_for_FUNC
 
 if use_parallel_evaluations
     parfor i=1:N_G
@@ -106,16 +96,5 @@ end
 for i=1:N_G
     niches(list_r(i,1)).list_num_genomes(list_r(i,2))=genome_list(i);
 end
-
-
-% 
-% for i_n=1:num_niches
-%     ['niches ' , num2str(i_n)]
-%     for i_g=1:niches(i_n).size_niches
-%         ['genome ' , num2str(i_g)]
-%         niches(i_n).list_num_genomes(i_g).matrix_weights
-%         niches(i_n).list_num_genomes(i_g).fit_fun        
-%     end
-% end
 
 end

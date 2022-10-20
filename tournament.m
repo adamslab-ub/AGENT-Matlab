@@ -62,12 +62,5 @@ else
     end
 end
 
-% for i =1:20
-%     ['XXXXXXXXXXXXXXXXXXXXXXXXX' num2str(i)]
-%     add_to_mating_pool(i).matrix_weights
-% end
-% rand
-
-
 end
 

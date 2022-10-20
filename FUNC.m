@@ -57,8 +57,6 @@ out_needed_local.step_for_CUTOFF=step_for_CUTOFF;
 out_needed_local.simul_para=simul_para;
 out_needed_local.MIN_OBJ=MIN_OBJ;
 out_needed_local.F_best_till_now=F_best_till_now;
-% out_needed_local
-% sdsa
 
 
 

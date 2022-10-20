@@ -15,17 +15,10 @@ end
 for i=1:child.n_edge
     r1=child.edge_gene(i).start;
     r2=child.edge_gene(i).end;
-%     '*********'
-%     r1
-%     r2
-%     '*********'
     m_r_s=found_a_loop(child,list_in_nodes(r1),list_in_nodes(r2));
     if m_r_s==1
         break;
     end
 end
-% '*********'
-% m_r_s
-% '*********'
 end
 

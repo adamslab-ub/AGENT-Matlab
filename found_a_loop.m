@@ -22,9 +22,6 @@ end
 
 
 m_r_s=mark(r1);
-% display('ZZZZZ')
-% display(m_r_s)
-% display('ZZZZZ')
 
 end
 

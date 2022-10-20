@@ -23,13 +23,6 @@ for i=1:num_genomes_X
         end
     end
 end
-        
-
-% 
-% num_enter_tor = num_enter_tor0;
-% num_win_tor= round(r2*num_enter_tor0);
-% num_win_tor= max(num_win_tor ,ceil( min_max_R_touramneent(1)*num_enter_tor0));
-% num_win_tor= min(num_win_tor ,floor( min_max_R_touramneent(2)*num_enter_tor0));
 
 tournament0.num_win_tor=num_win_tor;
 tournament0.num_enter_tor=num_enter_tor;

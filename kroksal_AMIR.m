@@ -3,9 +3,6 @@ function T_m_s_T=kroksal_AMIR(V,E)% E : start, end , weight
 [~,E_idx]=sort(E(:,3));
 n_V=length(V);
 mark=V;
-% E(:,3)
-% E(87,3)
-% size(E(:,3))
 
 
 flag=1;
